@@ -1,0 +1,8 @@
+function setOnTrackFuncbb(peert,remoteVideost) {
+    var remoteStreamt=new MediaStream();
+    remoteVideost.srcObject=remoteStreamt;
+
+    peert.addEventListener('track',async (eventt)=>{
+        remoteStreamt.addTrack(eventt.track,remoteStreamt)
+    });
+}

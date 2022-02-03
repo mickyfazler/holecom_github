@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* outline: none; */
+  }
+  
+body{
+    min-height: 100vh;
+}
+
+#video-gridb{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+ video{
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+                    /* All image croping from left and right and top-bottom side when we small .....yaho css 63.1*/
+    padding: 8px;
+ }
+ 
+
+.mainb {
+    height: 100vh;
+    display: flex;
+}
+
+.main__left {
+    flex: 0.8;          
+                /* it's actually flex-grow.....saw yaho flex 9 {and 11 and 14 code for know that it's shorthand1} */
+    display: flex;
+    flex-direction: column;
+}
+
+.main__right {
+    flex: 0.2
+}
+
+.main__videos {
+    flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+                             /* horizontally center <-> .....yaho flex 4 */ 
+    align-items: center;
+                        /* because of that our videos on vertically ↨  .....yaho flex 5*/
+    padding: 40px;
+}
+
+.main__controls {
+    background-color: #1C1E20;
+}
+
+.main__right {
+    background-color: #242324;
+    border-left: 1px solid #3D3D42;
+}
+
+.main__controls {
+    color: #D2D2D2;
+    display: flex;
+    justify-content: space-between;
+                                    /* that's why first block at the left and 2nd on center and 3rd at the right */
+    padding: 5px;
+}
+
+.main__controls__blockb {
+    display: flex;
+}
+
+.main__controls__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.main__controls__button:hover {
+                                /* that's why when we click on like 'mute' it shows a hover */
+    background-color: #343434;
+    border-radius: 5px;
+}
+
+.main__controls__button i {
+    font-size: 24px;
+                    /* that's why text like 'mute,stop video  is big*/
+}
+
+.main__right {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__header {
+    padding-top: 5px;
+    color: #F5F5F5;
+    text-align: center;
+                     /* horizontally center <-> .....yaho flex 4 */ 
+}
+
+/* .main__chat_window { */
+#main__chat_window {
+    flex-grow: 1;
+                /* because of that 'input  at the last.....it takes all the space horizontally ↨(horizontally because upper you will saw [flex-direction: column;] own explore: } it can....saw yaho flex 9*/
+    overflow-y: auto;
+}
+
+.messages{
+    color: white;
+    list-style: none;
+}
+
+.main__message_container {
+    padding: 22px 12px;
+    display: flex;
+}
+
+.main__message_container input {
+    flex-grow: 1;
+                /* sothat it takes the full width {horizontally <-> because [display: flex;] own explore: } */
+    background-color: transparent;
+    border: none;
+    color: #F5F5F5;
+}
+
+.leave_meeting {
+    color: #EB534B;
+}
+
+.unmute, .stop {
+    color: #CC3B33;
+}
+
+
+
+
+
+/* his code */
+
+.popup-screen{
+    z-index: 999999;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.5s ease;
+    transition-property: visibility;
+  }
+  
+  .popup-screen.active{
+    /* which div or anything which have this two class */
+    visibility: visible;
+    
+  
+  }
+  
+  .popup-box{
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+    transform: scale(0);
+    transition: 0.5s ease;
+    transition-property: transform;
+  }
+  
+  .popup-screen.active .popup-box{
+    transform: scale(1);
+  }
+
+  
+  /* 2 */
+  
+  
+  
+  form .data label{
+    font-size: 20px;
+  }
+  form .data input{
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 1px solid silver;
+  }
+  form .data input:focus{
+    border-color: #3498db;
+    border-bottom-width: 2px;
+    /* border-bottom-width: 8px; */
+    /* own explore */
+  }
+  form .forgot-pass{
+    margin-top: -8px;
+  }
+  form .forgot-pass a{
+    color: #3498db;
+    text-decoration: none;
+  }
+  form .forgot-pass a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+                /* Please commen this line to understand */
+  }
+  form .btn .inner{
+    height: 100%;
+    width: 100%;
+    width: 300%;
+    /* when we increase the width then it increase width from current to right...own explore */
+    /* width: 100vw; */
+    position: absolute;
+    left: -100%;
+    /* left: 0; */
+    z-index: -1;
+              /* it will show at the last AND OUR text will show */
+  
+    background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+    /* left: 0; */
+  
+    transition: all 0.4s;
+  }
+  form .btn:hover .inner{
+    left: 0;
+  }
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  form .signup-link{
+    text-align: center;
+  }
+  form .signup-link a{
+    color: #3498db;
+    text-decoration: none;
+  }
+  form .signup-link a:hover{
+    text-decoration: underline;
+  }

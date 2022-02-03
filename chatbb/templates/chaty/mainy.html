@@ -1,0 +1,141 @@
+{% load static %}       
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon"href="{% static 'favbb/favicon.ico' %}">            <!-- added favicon.....own explore: copief from https://simpleit.rocks/python/django/django-favicon-adding/#4-add-to-html-->
+
+   <title>Document</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                     <!-- we using bootstrap because of 'text font' -->
+
+
+   <link rel="stylesheet" href="{% static 'cssbb/mainc.css' %} ">
+   <link rel="stylesheet" href="{% static 'cssbb/ratingc.css' %} ">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   {% comment %} <script src="https://kit.fontawesome.com/c939d0e917.js"></script> {% endcomment %}
+
+</head>
+{% comment %} <input type="text" id='input_usernamebb'>
+    <button id='joinbtnbb'>Join Room</button> {% endcomment %}
+
+<body>
+   
+   <div id="rating_scrnid" class='rating_screenbb'>
+      <div class='rating_screenboxbb'>
+         <div class="post">
+            <div class="text">Thanks for rating us!</div>
+         </div>
+         <div class="star-widget">
+            <input type="radio" name="rate" id="rate-5">
+            <label for="rate-5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-4">
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3">
+            <label for="rate-3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-2">
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1">
+            <label for="rate-1" class="fas fa-star"></label>
+            <form action="#">
+               <header></header>
+               <div class="textarea">
+                  <textarea name="fedby" id="fedbackbb" cols="30" placeholder="Describe your experience.."></textarea>
+               </div>
+               <div class="btn">
+                  <button type="submit">Post</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="mainb">
+      
+
+
+      
+       <div class="popup-screen">
+         <div class="popup-box">
+            <p style="color:red;" id='inpt_errory'></p>
+           <form action="#" id='popFormbb'>
+             <div class="data">
+                <label>Room Name</label>
+                <input id='input_roomnamebb' type="text" required>
+             </div>
+             <div class="data">
+                <label>Your Name</label>
+                <input id='input_usernamebb' type="text" required>
+             </div>
+            
+             <div class="btn">
+                <div class="inner"></div>
+                <button id='joinbtnbb' type="submit">Enter</button>
+             </div>
+            
+          </form>
+         </div>
+       </div>
+
+     
+      
+       <div class="main__left">
+         <div class="main__videos">
+            <div id="video-gridb">
+               <video id="local_vidb" autoplay playsinline></video>
+            </div>
+         </div>
+         <div class="main__controls">     <!-- means all the button at the left down....like mute,stop vide,.... -->
+            <div class="main__controls__blockb">         <!-- we have three blocks {mute,stop vide},{security,participants,chat},{leave meeting} -->
+
+               {% comment %} <div onclick="muteUnmuteFuncbb()" class="main__controls__button main__mute_button"> {% endcomment %}
+               <div id='toggle_audiob' class="main__controls__button main__mute_button">
+                  <i class="fas fa-microphone"></i>
+                  <span>Mute</span>
+               </div>
+               {% comment %} <div onclick="playStopFuncbb()" class="main__controls__button main__video_button" > {% endcomment %}
+               <div id='toggle_vidb' class="main__controls__button main__video_button" >
+                  <i class="fas fa-video"></i>
+                  <span>Stop Video</span>
+               </div>
+
+               {% comment %} <div id='share_screenb' onclick='shareScreenFuncbb()' class="main__controls__button main__video_button" >
+                  <i class="fas fa-video"></i>
+                  <span>Share screen</span>
+               </div> {% endcomment %}
+            </div>
+
+            <div id='leave_meeting' class="main__controls__blockb">
+               <div  class="main__controls__button">
+                  <span class="leave_meeting">Leave Meeting</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="main__right">     <!-- means "chat" baby  -->
+         <div class="main__header">
+            <h6>Chat</h6>
+         </div>
+         {% comment %} <div class="main__chat_window"> {% endcomment %}
+         <div id="main__chat_window">
+            <ul class="messages">
+               
+            </ul>
+
+         </div>
+         <div class="main__message_container">
+            <input id="input_messageh" type="text" placeholder="Type message here...">
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'jsbb/mainbb.js' %}"></script>
+   <script src="{% static 'jsbb/ratingg.js' %}"></script>
+
+</body>
+</html>
