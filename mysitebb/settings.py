@@ -11,11 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.holecom.com','holecombb.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = ['.holecom.com','holecombb.herokuapp.com']
 # ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com']
 
 # Application definition
 
