@@ -23,6 +23,8 @@ setup()
 
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter,URLRouter
+from channels.security.websocket import AllowedHostsOriginValidator
+
 from chatbb.routingbb import ws_applicationbb 
 
 
@@ -34,10 +36,15 @@ application = ProtocolTypeRouter({
     "http": django_asgi_app,
     # "http": get_default_application(),
     # Just HTTP for now. (We can add other protocols later.)
-    'websocket':AuthMiddlewareStack(
-            URLRouter(
-                ws_applicationbb
+    # 'websocket':AuthMiddlewareStack(
+    # we are giving :AllowedHostsOriginValidator" sothat anywebsite's "websocket" connection is accept...own explore: talent fazle https://stackoverflow.com/questions/54041956/django-channels-websocket-disconnect
+    'websocket':AllowedHostsOriginValidator(
+            AuthMiddlewareStack(
+                URLRouter(
+                    ws_applicationbb
+                )
             )
+        
         )
 })
 
