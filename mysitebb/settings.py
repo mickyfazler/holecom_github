@@ -13,9 +13,9 @@ SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.holecom.com','holecomb.herokuapp.com']
+ALLOWED_HOSTS = ['.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app/']
 # ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app/']
 
 # Application definition
 
@@ -142,7 +142,7 @@ STATIC_DIR=os.path.join(BASE_DIR,"static")              # Adding static folder..
 STATICFILES_DIRS=[STATIC_DIR]           # You must need to give it ....files and dirs ...not file and dir....Remember
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL='/static/'
-import django_heroku
+# import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CHANNEL_LAYERS = {
