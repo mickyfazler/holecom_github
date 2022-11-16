@@ -15,7 +15,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app/']
 # ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
 
 # Application definition
 
