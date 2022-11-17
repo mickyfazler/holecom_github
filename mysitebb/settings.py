@@ -177,7 +177,7 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-            "hosts": [('containers-us-west-85.railway.app',7630)]
+            "hosts": [('Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app',7630)]
         },
     },
 }
