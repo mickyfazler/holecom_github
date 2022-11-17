@@ -163,21 +163,21 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# CHANNEL_LAYERS = {
-#     "default": {
-#         "BACKEND": "channels.layers.InMemoryChannelLayer"
-#     }
-# } 
-
-
-
-
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-            "hosts": [('Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app',7630)]
-        },
-    },
-}
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+} 
+
+
+
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+#             "hosts": [('Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app',7630)]
+#         },
+#     },
+# }
