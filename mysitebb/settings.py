@@ -165,14 +165,14 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# CHANNEL_LAYERS = {
-#     "default": {
-#         "BACKEND": "channels.layers.InMemoryChannelLayer"
-#     }
-# } 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+} 
 
 
-
+""" 
 
 CHANNEL_LAYERS = {
     "default": {
@@ -201,4 +201,4 @@ CHANNEL_LAYERS = {
         
         },
     },
-}
+} """
