@@ -156,7 +156,7 @@ import os
 STATIC_DIR=os.path.join(BASE_DIR,"static")              # Adding static folder.....Remember
 STATICFILES_DIRS=[STATIC_DIR]           # You must need to give it ....files and dirs ...not file and dir....Remember
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-# STATIC_URL='/static/'
+STATIC_URL='/static/'
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
