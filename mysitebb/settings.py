@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app/']
+ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app']
 # ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
 
