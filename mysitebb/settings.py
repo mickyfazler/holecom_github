@@ -183,7 +183,7 @@ CHANNEL_LAYERS = {
 #             # "hosts": [("containers-us-west-85.railway.app",'redis://containers-us-west-85.railway.app:7630')]
 #             "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)], 
             # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:7630')],
-            "hosts": [('redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app', 'redis://localhost:6379')],
+            # "hosts": [('redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app', 'redis://localhost:6379')],
             # "hosts": [(os.environ.get('REDIS_URL'), 7630)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
 
@@ -194,7 +194,7 @@ CHANNEL_LAYERS = {
     
             # "hosts": [("127.0.0.1", 7630)],
             # "hosts": [("127.0.0.1", 6379)],
-            # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
+            "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
             # "hosts": [("default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
             # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 6379)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
