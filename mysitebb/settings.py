@@ -191,9 +191,9 @@ CHANNEL_LAYERS = {
             # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630', 6379)],
 
     
-            # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
-            "hosts": [("127.0.0.1", 7630)],
+            # "hosts": [("127.0.0.1", 7630)],
             # "hosts": [("127.0.0.1", 6379)],
+            "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
             # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 6379)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
             # "hosts": [("containers-us-west-85.railway.app", 6379)],
