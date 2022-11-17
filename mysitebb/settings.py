@@ -165,14 +165,14 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CHANNEL_LAYERS = {
+""" CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
-} 
+}  """
 
 
-""" 
+
 
 CHANNEL_LAYERS = {
     "default": {
@@ -183,6 +183,7 @@ CHANNEL_LAYERS = {
 #             # "hosts": [("containers-us-west-85.railway.app",'redis://containers-us-west-85.railway.app:7630')]
 #             "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)], 
             # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:7630')],
+            "hosts": [('redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app', 'redis://localhost:6379')],
             # "hosts": [(os.environ.get('REDIS_URL'), 7630)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
 
@@ -197,8 +198,8 @@ CHANNEL_LAYERS = {
             # "hosts": [("default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
             # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 6379)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
-            "hosts": [("containers-us-west-85.railway.app", 6379)],
+            # "hosts": [("containers-us-west-85.railway.app", 6379)],
         
         },
     },
-} """
+}
