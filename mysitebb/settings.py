@@ -11,7 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app']
 # ALLOWED_HOSTS = ['*']
