@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+DEBUG = False           # Error 500 with debug=False, but no error with debug=True then run 'python manage.py collectstatic' own explore:
+# DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app']
 # ALLOWED_HOSTS = ['*']
@@ -100,6 +100,8 @@ DATABASES = {
     }
 }
 
+
+# it wass need with heroku database
 # import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE:
     
 # db_from_env= dj_database_url.config(conn_max_age=600)
@@ -163,11 +165,11 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-} 
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
+# } 
 
 
 
@@ -176,8 +178,20 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            # "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-            "hosts": [('containers-us-west-85.railway.app',7630)]
+            # "hosts": [os.environ.get('REDIS_URL'),os.environ.get('7630'))],
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:7630')],
+            # "hosts": [('containers-us-west-85.railway.app','redis://containers-us-west-85.railway.app:7630')]
         },
     },
 }
+
+
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)], 
+#         },
+#     },
+# }
