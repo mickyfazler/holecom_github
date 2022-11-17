@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app/']
+ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app/']
 # ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,7 +74,8 @@ TEMPLATES = [
 # }
 
 # MY CODE BABY
-DATABASES = {
+# NOTE:this is for heroku
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dalh82fturasdi',
@@ -83,11 +85,24 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+ """
 
-# import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE
+DATABASES = {
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '1wSUSK5HU4ShrjFeeEyJ',
+        'HOST': 'containers-us-west-64.railway.app',
+        'PORT': '6382',
+    }
+}
+
+# import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE:
     
-db_from_env= dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env= dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -141,7 +156,7 @@ import os
 STATIC_DIR=os.path.join(BASE_DIR,"static")              # Adding static folder.....Remember
 STATICFILES_DIRS=[STATIC_DIR]           # You must need to give it ....files and dirs ...not file and dir....Remember
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-STATIC_URL='/static/'
+# STATIC_URL='/static/'
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
