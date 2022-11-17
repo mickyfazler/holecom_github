@@ -174,16 +174,16 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            # "hosts": [os.environ.get('REDIS_URL'),os.environ.get('7630'))],
-            "hosts": [os.environ.get('REDIS_URL'), os.environ.get('REDISPORT')],
-            # "hosts": [('containers-us-west-85.railway.app','redis://containers-us-west-85.railway.app:7630')]
-        },
-    },
-}
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             # "hosts": [os.environ.get('REDIS_URL'),os.environ.get('7630'))],
+#             "hosts": [os.environ.get('REDIS_URL'), os.environ.get('REDISPORT')],
+#             # "hosts": [('containers-us-west-85.railway.app','redis://containers-us-west-85.railway.app:7630')]
+#         },
+#     },
+# }
 
 
 
@@ -195,3 +195,13 @@ CHANNEL_LAYERS = {
 #         },
 #     },
 # }
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:7630')],
+        },
+    },
+}
