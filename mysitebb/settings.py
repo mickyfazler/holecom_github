@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = True
+# DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecomb.herokuapp.com','web-production-807b.up.railway.app']
 # ALLOWED_HOSTS = ['*']
@@ -100,10 +100,10 @@ DATABASES = {
     }
 }
 
-import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE:
+# import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE:
     
-db_from_env= dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env= dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -157,12 +157,26 @@ import os
 STATIC_DIR=os.path.join(BASE_DIR,"static")              # Adding static folder.....Remember
 STATICFILES_DIRS=[STATIC_DIR]           # You must need to give it ....files and dirs ...not file and dir....Remember
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-STATIC_URL='/static/'
+# STATIC_URL='/static/'
+
+
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
+# } 
+
+
+
+
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-} 
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+    },
+}
