@@ -205,8 +205,8 @@ CHANNEL_LAYERS = {
             # "hosts": [("containers-us-west-85.railway.app", 6379)],
         
             # "hosts": ["redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630"],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
-            # "hosts": ["redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630"],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
-            "hosts": [os.environ.get('REDIS_URL')],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
+            "hosts": ["redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630"],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
+            # "hosts": [os.environ.get('REDIS_URL')],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
         },
     },
 } 
