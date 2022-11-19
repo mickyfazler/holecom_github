@@ -165,15 +165,15 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-} 
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
+# } 
 
 
 
-""" 
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -194,12 +194,19 @@ CHANNEL_LAYERS = {
     
             # "hosts": [("127.0.0.1", 7630)],
             # "hosts": [("127.0.0.1", 6379)],
-            "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
+            # "hosts": [("containers-us-west-85.railway.app", 7630)],
+            # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
+            # "hosts": [("127.0.00.1", 6379)],
+            # 'password':"Oik9KXvvNEyZDUO6ZsnG",
+            # 'user':"default",
             # "hosts": [("default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 7630)],
             # "hosts": [("redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app", 6379)],
             # "hosts": [("containers-us-west-85.railway.app", 7630)],
             # "hosts": [("containers-us-west-85.railway.app", 6379)],
         
+            # "hosts": ["redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630"],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
+            # "hosts": ["redis://default:Oik9KXvvNEyZDUO6ZsnG@containers-us-west-85.railway.app:7630"],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
+            "hosts": [os.environ.get('REDIS_URL')],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
         },
     },
-} """
+} 
