@@ -165,15 +165,17 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# CHANNEL_LAYERS = {
-#     "default": {
-#         "BACKEND": "channels.layers.InMemoryChannelLayer"
-#     }
-# } 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+} 
 
 
 
 
+# NOTE:it's working but slow
+""" 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -209,4 +211,4 @@ CHANNEL_LAYERS = {
             # "hosts": [os.environ.get('REDIS_URL')],           #learned from https://github.com/django/channels_redis#symmetric_encryption_keys GENIUS: one thing i learned if you want something from the bottom of the heart you get it
         },
     },
-} 
+}  """
