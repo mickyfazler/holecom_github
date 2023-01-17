@@ -88,13 +88,14 @@ TEMPLATES = [
 }
  """
 
+
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '1wSUSK5HU4ShrjFeeEyJ',
+        'PASSWORD': 'OZNmtAPCmxjFP5w8VY7O',
         'HOST': 'containers-us-west-64.railway.app',
         'PORT': '6382',
     }
