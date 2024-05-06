@@ -20,7 +20,7 @@ ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','.ondigitalocean.app']
 # CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://coral-app-g8iri.ondigitalocean.app']
 
-wss://coral-app-g8iri.ondigitalocean.app/
+
 # Application definition
 
 INSTALLED_APPS = [
