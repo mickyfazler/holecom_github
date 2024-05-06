@@ -68,12 +68,12 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # MY CODE BABY
 # NOTE:this is for heroku
@@ -90,7 +90,8 @@ TEMPLATES = [
  """
 
 
-DATABASES = {
+#NOTE it works 
+""" DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
@@ -101,7 +102,7 @@ DATABASES = {
         'PORT': '6382',
     }
 }
-
+ """
 
 # it wass need with heroku database
 # import  dj_database_url     # here it's dj_datatabase_url but in requirements.txt dj-datatabase-url remember NOTE:
