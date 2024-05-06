@@ -14,7 +14,8 @@ SECRET_KEY = 'django-insecure-feas2ka+1q5(!+!rc%d%n16(un=7qk4w*cnxycp=-s4fq=r&#l
 DEBUG = False           # Error 500 with debug=False, but no error with debug=True then run 'python manage.py collectstatic' own explore:
 # DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecom.up.railway.app']
+# ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecom.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','.ondigitalocean.app']
 # ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
 
