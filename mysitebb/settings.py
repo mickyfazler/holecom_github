@@ -17,8 +17,10 @@ DEBUG = False           # Error 500 with debug=False, but no error with debug=Tr
 # ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','holecom.up.railway.app']
 ALLOWED_HOSTS = ['127.0.0.1','.holecom.com','.ondigitalocean.app']
 # ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://holecomb.herokuapp.com','https://web-production-807b.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://coral-app-g8iri.ondigitalocean.app']
 
+wss://coral-app-g8iri.ondigitalocean.app/
 # Application definition
 
 INSTALLED_APPS = [
