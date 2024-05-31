@@ -6,6 +6,6 @@ from .consumersbb import VideoChatConsumerbb
 
 # ws_applicationbb=[
 ws_applicationbb=[
-    path('wsbb/',VideoChatConsumerbb.as_asgi())
-    # path('',VideoChatConsumerbb.as_asgi())  
+    # path('wsbb/',VideoChatConsumerbb.as_asgi())
+    path('',VideoChatConsumerbb.as_asgi())  
 ]
