@@ -24,6 +24,7 @@ CSRF_TRUSTED_ORIGINS = ['https://coral-app-g8iri.ondigitalocean.app']
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",       # new version
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -32,7 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'chatbb',
-    'channels',
+    # 'channels',           # in older version baby
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +138,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dhaka'
+
 
 USE_I18N = True
 
@@ -169,7 +172,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 
 # import django_heroku
 # his(tauhid) code  https://channels.readthedocs.io/en/latest/topics/channel_layers.html#in-memory-channel-layer
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
