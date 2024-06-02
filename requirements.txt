@@ -6,6 +6,7 @@ daphne==4.1.2           #it handle 'http' and 'websocket'
 # Django==4.0
 Django==5.0.6
 # whitenoise==5.3.0
+whitenoise        # it's needed for heroku baby `Procfile`
 # dj-database-url==0.5.0  
 # psycopg2==2.9.3         # this is giving errorxin windows  Psycopg2 is a popular postgres database adapter for python so we'll need it when connecting django to postgres
 # django-heroku==0.3.1
